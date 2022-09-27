@@ -26,6 +26,7 @@ public class Exo6 {
                     tab[i-1][j-1] = (float) valeur;
                 }
             }
+            System.out.println("\n\n~~~~~~~~~~ Affichage du tableau ~~~~~~~~~~\n\n");
             for (int i=1; i <= choix; i++){
                 for (int j=1; j <= choix; j++){
                     System.out.print(tab[i-1][j-1] + " | ");
@@ -33,7 +34,7 @@ public class Exo6 {
                 }
                 average = average / choix;
                 somme += average;
-                System.out.println(Math.round(average*100.0)/100.0);
+                System.out.printf("\u001B[35m" + "%-10.2f" + "\u001B[0m", Math.round(average * 100.0) / 100.0);
                 average = 0;
                 System.out.println();
             }
@@ -43,17 +44,17 @@ public class Exo6 {
                 }
                 average2 = average2 / choix;
                 somme2 += average2;
-                System.out.print(Math.round(average2*100.0)/100.0 + "  ");
+                System.out.printf("\u001B[31m" + "%-6s" + "\u001B[0m", Math.round(average2 * 100.0) / 100.0);
                 average2 = 0;
             }
-            System.out.print(" " + somme);
+            System.out.print(somme);
             if (somme > somme2){
-                System.out.println("\nLa somme des moyennes des lignes est supérieure à la somme des moyennes des colonnes");
+                System.out.println("\n\nLa somme des moyennes des lignes est supérieure à la somme des moyennes des colonnes");
             } else if (somme < somme2){
-                System.out.println("\nLa somme des moyennes des lignes est inférieure à la somme des moyennes des colonnes");
+                System.out.println("\n\nLa somme des moyennes des lignes est inférieure à la somme des moyennes des colonnes");
             } else {
 
-                System.out.println("\nLa somme des moyennes des lignes est égale à la somme des moyennes des colonnes");
+                System.out.println("\n\nLa somme des moyennes des lignes est égale à la somme des moyennes des colonnes");
             }
         }
     }
